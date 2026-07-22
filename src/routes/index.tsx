@@ -22,7 +22,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import shankarAsset from "@/assets/shankar.jpeg.asset.json";
+const shankarPhoto = "/shankar.jpeg";
 import {
   NAV,
   STATS,

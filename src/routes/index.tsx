@@ -671,7 +671,6 @@ function ToolsAndInterests() {
 }
 
 function Contact() {
-  const [sent, setSent] = useState(false);
   const infos = [
     { icon: Phone, label: "Phone", value: CONTACT.phone, href: `tel:${CONTACT.phone}` },
     { icon: Mail, label: "Email", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
@@ -686,108 +685,43 @@ function Contact() {
           title="Let's Work Together"
           subtitle="Have a role, project, or idea? I'd love to hear from you."
         />
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
-          <div data-reveal="left" className="lg:col-span-2 flex flex-col gap-4">
-            {infos.map(({ icon: Icon, label, value, href }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel="noreferrer"
-                className="group flex items-center gap-4 rounded-2xl glass p-5 transition-all hover:-translate-y-0.5 hover:border-[#3EF0A8]"
-              >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#3EF0A8]/15 text-[#3EF0A8] transition-transform group-hover:scale-110">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-widest text-white/50">{label}</p>
-                  <p className="truncate font-display text-sm font-semibold text-white">
-                    {value}
-                  </p>
-                </div>
-              </a>
-            ))}
-            <div className="mt-2 overflow-hidden rounded-2xl glass p-2">
-              <div className="flex items-center gap-2 p-3 text-xs text-white/70">
-                <MapPin className="h-4 w-4 text-[#3EF0A8]" /> Kathmandu, Nepal
-              </div>
-              <iframe
-                title="Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14126.8!2d85.324!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu!5e0!3m2!1sen!2snp!4v1"
-                width="100%"
-                height="200"
-                style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg)" }}
-                loading="lazy"
-                className="rounded-xl"
-              />
-            </div>
-          </div>
-          <form
-            data-reveal
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-              setTimeout(() => setSent(false), 3500);
-              (e.target as HTMLFormElement).reset();
-            }}
-            className="rounded-[1.5rem] glass-strong p-6 sm:p-8 lg:col-span-3"
-          >
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <Field label="Name" name="name" placeholder="Your name" />
-              <Field label="Email" type="email" name="email" placeholder="you@email.com" />
-            </div>
-            <Field label="Subject" name="subject" placeholder="What's this about?" />
-            <div className="mt-4">
-              <label className="text-xs font-semibold uppercase tracking-widest text-white/60">
-                Message
-              </label>
-              <textarea
-                required
-                rows={6}
-                name="message"
-                placeholder="Tell me about your project..."
-                className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#3EF0A8] focus:outline-none focus:ring-2 focus:ring-[#3EF0A8]/30"
-              />
-            </div>
-            <button
-              type="submit"
-              className="group mt-6 inline-flex items-center gap-2 rounded-full bg-[#3EF0A8] px-6 py-3 text-sm font-semibold text-[#050505] transition-all hover:mint-glow hover:scale-105"
+        <div data-reveal className="mx-auto grid max-w-3xl grid-cols-1 gap-4">
+          {infos.map(({ icon: Icon, label, value, href }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel="noreferrer"
+              className="group flex items-center gap-4 rounded-2xl glass p-5 transition-all hover:-translate-y-0.5 hover:border-[#3EF0A8]"
             >
-              <Send className="h-4 w-4" />
-              {sent ? "Message Sent!" : "Send Message"}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-          </form>
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#3EF0A8]/15 text-[#3EF0A8] transition-transform group-hover:scale-110">
+                <Icon className="h-5 w-5" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-xs uppercase tracking-widest text-white/50">{label}</p>
+                <p className="truncate font-display text-sm font-semibold text-white">
+                  {value}
+                </p>
+              </div>
+            </a>
+          ))}
+          <div className="mt-2 overflow-hidden rounded-2xl glass p-2">
+            <div className="flex items-center gap-2 p-3 text-xs text-white/70">
+              <MapPin className="h-4 w-4 text-[#3EF0A8]" /> Kathmandu, Nepal
+            </div>
+            <iframe
+              title="Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14126.8!2d85.324!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu!5e0!3m2!1sen!2snp!4v1"
+              width="100%"
+              height="220"
+              style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg)" }}
+              loading="lazy"
+              className="rounded-xl"
+            />
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-}) {
-  return (
-    <div className="mt-4 sm:mt-0">
-      <label className="text-xs font-semibold uppercase tracking-widest text-white/60">
-        {label}
-      </label>
-      <input
-        required
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#3EF0A8] focus:outline-none focus:ring-2 focus:ring-[#3EF0A8]/30"
-      />
-    </div>
   );
 }
 

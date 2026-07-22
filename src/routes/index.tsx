@@ -22,7 +22,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import shankarAsset from "@/assets/shankar.jpeg.asset.json";
+const shankarPhoto = "/shankar.jpeg";
 import {
   NAV,
   STATS,
@@ -280,7 +280,7 @@ function Hero() {
             <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-[#3EF0A8] via-transparent to-[#3EF0A8]/40 opacity-70 blur-md" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-2 backdrop-blur">
               <img
-                src={shankarAsset.url}
+                src={shankarPhoto}
                 alt="Portrait of Shankar Chhetri"
                 className="h-[380px] w-[320px] rounded-[1.6rem] object-cover sm:h-[460px] sm:w-[380px]"
               />

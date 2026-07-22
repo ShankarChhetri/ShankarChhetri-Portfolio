@@ -10,7 +10,6 @@ import {
   Star,
   ArrowUp,
   MapPin,
-  Send,
   GraduationCap,
   Code2,
   BookOpen,

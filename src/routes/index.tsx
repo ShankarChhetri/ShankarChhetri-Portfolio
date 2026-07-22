@@ -449,23 +449,21 @@ function Education() {
             <div className="rounded-[1.5rem] glass-strong p-6 sm:ml-[calc(50%+2rem)] sm:p-8">
               <div className="flex items-center justify-between">
                 <span className="rounded-full bg-[#3EF0A8]/15 px-3 py-1 text-xs font-semibold text-[#3EF0A8]">
-                  2021 – 2025
+                  2022 – 2025
                 </span>
                 <GraduationCap className="h-6 w-6 text-[#3EF0A8]" />
               </div>
-              <h3 className="mt-4 font-display text-2xl font-black">Bachelor Degree</h3>
+              <h3 className="mt-4 font-display text-2xl font-black">
+                Bsc. IT (Hons) in Computer Systems Engineering
+              </h3>
               <p className="mt-1 font-display text-lg font-semibold text-white/90">
                 ISMT College
               </p>
               <p className="text-sm text-white/60">University of Sunderland</p>
-              <div className="mt-5 grid grid-cols-2 gap-3">
+              <div className="mt-5 flex flex-wrap gap-3">
                 <div className="rounded-xl border border-white/10 bg-white/5 p-3">
                   <p className="text-xs text-white/60">Graduation</p>
                   <p className="font-display text-lg font-bold text-[#3EF0A8]">2025</p>
-                </div>
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <p className="text-xs text-white/60">Score</p>
-                  <p className="font-display text-lg font-bold text-[#3EF0A8]">65.5%</p>
                 </div>
               </div>
             </div>

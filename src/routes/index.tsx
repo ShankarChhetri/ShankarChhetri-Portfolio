@@ -563,7 +563,7 @@ function SkillBar({ name, value, delay }: { name: string; value: number; delay: 
     <div ref={ref}>
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium text-white/90">{name}</span>
-        <span className="font-display text-sm font-bold text-[#3EF0A8]">{value}%</span>
+        <span className="h-2 w-2 rounded-full bg-[#3EF0A8] shadow-[0_0_8px_#3EF0A8]" />
       </div>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
         <div
